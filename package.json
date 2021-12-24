@@ -38,7 +38,8 @@
     "webpack-dev-server": "^4.7.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.16.5"
+    "@babel/runtime": "^7.16.5",
+    "babel-polyfill": "^6.26.0"
   },
   "browserslist": [
     "defaults"
