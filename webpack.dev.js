@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    static: './dist',
+    static: './src',
   },
 
   entry: {
@@ -13,7 +13,7 @@ module.exports = {
   },
 
   output: {
-    filename: '[name].bundle.js',
+    filename: 'js/script.bundle.[contenthash].js',
     path: path.resolve(__dirname, './dist'),
     assetModuleFilename: 'assets/[name].[hash][ext]',
     clean: true,

@@ -14,18 +14,19 @@ module.exports = {
   },
 
   output: {
-    filename: 'script.bundle.[contenthash].js',
+    filename: 'js/script.bundle.[contenthash].js',
     path: path.resolve(__dirname, './dist'),
     assetModuleFilename: 'assets/[name].[hash][ext]',
     clean: true,
   },
 
   plugins: [
-    new MiniCssExtractPlugin({ filename: 'style.bundle.[contenthash].css' }),
+    new MiniCssExtractPlugin({
+      filename: 'css/style.bundle.[contenthash].css',
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
-      scriptLoading: 'defer',
     }),
   ],
 
