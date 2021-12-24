@@ -70,14 +70,14 @@ module.exports = {
         test: /\.(jpe?g|png|gif)$/i,
         type: 'asset',
         generator: {
-          filename: 'assets/img/[name].[hash][ext]',
+          filename: 'assets/img/[name][ext]',
         },
       },
       {
         test: /\.svg$/i,
         type: 'asset',
         generator: {
-          filename: 'assets/svg/[name].[hash][ext]',
+          filename: 'assets/svg/[name][ext]',
         },
       },
     ],
