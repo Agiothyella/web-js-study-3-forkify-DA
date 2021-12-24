@@ -9,6 +9,8 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 module.exports = {
   mode: 'production',
 
+  target: 'browserslist',
+
   entry: {
     main: './src/index.js',
   },
@@ -59,7 +61,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [['autoprefixer']],
+                plugins: [['autoprefixer', {}]],
               },
             },
           },
