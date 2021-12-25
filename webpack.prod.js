@@ -12,11 +12,11 @@ module.exports = {
   target: 'browserslist',
 
   entry: {
-    main: './src/index.js',
+    script: './src/index.js',
   },
 
   output: {
-    filename: 'js/script.bundle.[contenthash].js',
+    filename: 'js/[name].bundle.[contenthash].js',
     path: path.resolve(__dirname, './dist'),
     assetModuleFilename: 'assets/[name].[hash][ext]',
     clean: true,
