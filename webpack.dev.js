@@ -16,7 +16,7 @@ module.exports = {
     filename: 'js/script.bundle.[contenthash].js',
     path: path.resolve(__dirname, './src'),
     publicPath: '/',
-    assetModuleFilename: 'img/[name][ext]',
+    assetModuleFilename: 'assets/[name][ext]',
     clean: true,
   },
 

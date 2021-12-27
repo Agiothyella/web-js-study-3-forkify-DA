@@ -1,13 +1,8 @@
-const recipeContainer = document.querySelector('.recipe');
-
-export const timeout = function (s) {
-  return new Promise(function (_, reject) {
-    setTimeout(function () {
-      reject(new Error(`Request took too long! Timeout after ${s} second`));
-    }, s * 1000);
-  });
-};
+import showRecipe from './recipeController';
+import timeout from './timeout';
 
 // https://forkify-api.herokuapp.com/v2
 
 ///////////////////////////////////////
+
+showRecipe();
