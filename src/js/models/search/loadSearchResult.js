@@ -1,6 +1,6 @@
-import state from './state';
-import getJSON from '../helper/getJSON';
-import { API_URL } from '../config/config';
+import state from '../state';
+import getJSON from '../../helper/getJSON';
+import { API_URL } from '../../config/config';
 
 const loadSearchResult = async function (query) {
   try {
@@ -16,6 +16,8 @@ const loadSearchResult = async function (query) {
         image: rec.image_url,
       };
     });
+
+    state.search.page = 1;
   } catch (err) {
     throw err;
   }

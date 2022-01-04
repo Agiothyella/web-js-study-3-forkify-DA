@@ -1,16 +1,21 @@
-import controllerRecipe from './controllerRecipe';
-import ViewRecipe from '../views/viewRecipe';
+import controlRecipe from './controlRecipe';
+import controlServing from './controlServing';
+import controlAddBookmark from './controlAddBookmark';
+import ViewRecipe from '../views/recipe/viewRecipe';
 
-import controllerSearch from './controllerSearch';
-import ViewSearch from '../views/viewSearch';
+import controlSearch from './controlSearch';
+import ViewSearch from '../views/search/viewSearch';
 
-import controllerPagination from './controllerPagination';
-import ViewPagination from '../views/viewPagination';
+import controlPagination from './controlPagination';
+import ViewPagination from '../views/search/viewPagination';
 
 const init = function () {
-  ViewRecipe.addHandlerRender(controllerRecipe);
-  ViewSearch.addHandlerSearch(controllerSearch);
-  ViewPagination.addHandlerClick(controllerPagination);
+  ViewRecipe.addHandlerRender(controlRecipe);
+  ViewRecipe.addHandlerUpdateServing(controlServing);
+  ViewRecipe.addHandlerAddBookmark(controlAddBookmark);
+
+  ViewSearch.addHandlerSearch(controlSearch);
+  ViewPagination.addHandlerClick(controlPagination);
 };
 
 init();

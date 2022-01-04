@@ -1,4 +1,4 @@
-import state from './state';
+import state from '../state';
 
 const getSearchPage = function (page = state.search.page) {
   state.search.page = page;

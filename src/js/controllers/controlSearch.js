@@ -1,10 +1,10 @@
 import state from '../models/state';
-import getSearchPage from '../models/getSearchPage';
-import loadSearchResult from '../models/loadSearchResult';
+import getSearchPage from '../models/search/getSearchPage';
+import loadSearchResult from '../models/search/loadSearchResult';
 
-import ViewSearch from '../views/viewSearch';
-import ViewSearchResult from '../views/viewSearchResult';
-import ViewPagination from '../views/viewPagination';
+import ViewSearch from '../views/search/viewSearch';
+import ViewSearchResult from '../views/search/viewSearchResult';
+import ViewPagination from '../views/search/viewPagination';
 
 const controllerSearch = async function () {
   try {

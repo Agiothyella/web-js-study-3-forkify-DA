@@ -1,5 +1,5 @@
-import iconsSvg from '../../assets/icons.svg';
-import View from './view';
+import iconsSvg from '../../../assets/icons.svg';
+import View from '../view';
 
 class ViewSearchResult extends View {
   _parentElement = document.querySelector('.results');
@@ -11,9 +11,13 @@ class ViewSearchResult extends View {
   }
 
   _generateMarkupItems(res) {
+    const id = window.location.hash.slice(1);
+
     return `
           <li class="preview">
-            <a class="preview__link" href="#${res.id}">
+            <a class="preview__link ${
+              id === res.id ? 'preview__link--active' : ''
+            }" href="#${res.id}">
               <figure class="preview__fig">
                 <img src="${res.image}" alt="${res.image}" />
               </figure>

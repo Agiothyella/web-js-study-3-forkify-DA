@@ -1,5 +1,5 @@
-import iconsSvg from '../../assets/icons.svg';
-import View from './view';
+import iconsSvg from '../../../assets/icons.svg';
+import View from '../view';
 
 class ViewPagination extends View {
   _parentElement = document.querySelector('.pagination');

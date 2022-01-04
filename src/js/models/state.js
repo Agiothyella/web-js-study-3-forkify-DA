@@ -8,6 +8,7 @@ const state = {
     resultPerPage: RES_PER_PAGE,
     page: 1,
   },
+  bookmarks: [],
 };
 
 export default state;

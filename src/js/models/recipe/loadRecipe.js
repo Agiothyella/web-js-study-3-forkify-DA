@@ -1,6 +1,6 @@
-import state from './state';
-import getJSON from '../helper/getJSON';
-import { API_URL } from '../config/config';
+import state from '../state';
+import getJSON from '../../helper/getJSON';
+import { API_URL } from '../../config/config';
 
 const loadRecipe = async function (id) {
   try {
@@ -17,6 +17,12 @@ const loadRecipe = async function (id) {
       cookingTime: recipe.cooking_time,
       ingredients: recipe.ingredients,
     };
+
+    if (state.bookmarks.some(bookmark => bookmark.id === id)) {
+      state.recipe.bookmarked = true;
+    } else {
+      state.recipe.bookmarked = false;
+    }
   } catch (err) {
     throw err;
   }
