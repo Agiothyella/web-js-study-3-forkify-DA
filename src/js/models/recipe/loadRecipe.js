@@ -1,22 +1,12 @@
 import state from '../state';
-import getJSON from '../../helper/getJSON';
-import { API_URL } from '../../config/config';
+import { API_KEY, API_URL } from '../../config/config';
+import createRecipeObject from './createRecipeObject';
+import AJAX from '../../helper/AJAX/AJAX';
 
 const loadRecipe = async function (id) {
   try {
-    const data = await getJSON(`${API_URL}${id}`);
-
-    const { recipe } = data.data;
-    state.recipe = {
-      id: recipe.id,
-      title: recipe.title,
-      publisher: recipe.publisher,
-      sourceUrl: recipe.source_url,
-      image: recipe.image_url,
-      servings: recipe.servings,
-      cookingTime: recipe.cooking_time,
-      ingredients: recipe.ingredients,
-    };
+    const data = await AJAX(`${API_URL}${id}?key=${API_KEY}`);
+    state.recipe = createRecipeObject(data);
 
     if (state.bookmarks.some(bookmark => bookmark.id === id)) {
       state.recipe.bookmarked = true;
